@@ -2,123 +2,278 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Vicky 💙</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 20px;
-  min-height: 100vh;
-  font-family: Georgia, serif;
-  text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #020817, #102d59, #030712);
+* {
+    box-sizing: border-box;
 }
 
-.card {
-  max-width: 600px;
-  margin: 35px auto;
-  padding: 25px;
-  background: #0a1b35;
-  border: 1px solid #5489c9;
-  border-radius: 24px;
-  box-shadow: 0 0 25px #4b9dff40;
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: center;
+    color: white;
+    background: radial-gradient(ellipse at bottom, #173b78 0%, #07142f 55%, #020817 100%);
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 10px #7dd3fc;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 30px 18px 60px;
 }
 
 h1 {
-  color: #ffd0a1;
-  font-size: clamp(30px, 7vw, 46px);
+    color: #a5ddff;
+    font-size: clamp(30px, 7vw, 45px);
+    text-shadow: 0 0 18px #319cff;
 }
 
-button {
-  padding: 13px 23px;
-  border: 0;
-  border-radius: 25px;
-  background: #ffd0a1;
-  color: #07152c;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+h2 {
+    color: #b8e5ff;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.card {
+    padding: 24px 18px;
+    margin: 22px auto;
+    border: 1px solid rgba(147, 197, 253, .4);
+    border-radius: 22px;
+    background: rgba(11, 30, 66, .83);
+    box-shadow: 0 0 25px rgba(59, 130, 246, .22);
+    backdrop-filter: blur(8px);
 }
 
 input {
-  display: block;
-  width: 90%;
-  max-width: 300px;
-  margin: 18px auto;
-  padding: 13px;
-  border-radius: 10px;
-  border: 1px solid #8abaff;
-  font-size: 16px;
-  text-align: center;
+    width: 90%;
+    max-width: 320px;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #60a5fa;
+    background: #07152e;
+    color: white;
+    font-size: 16px;
+    text-align: center;
 }
 
-#birthday { display: none; }
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 24px;
+    margin: 8px;
+    color: #06142d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #93c5fd, #67e8f9);
+    box-shadow: 0 0 18px rgba(103, 232, 249, .35);
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.gift {
+    font-size: 100px;
+    display: inline-block;
+    cursor: pointer;
+    animation: bounce 1.4s infinite;
+    filter: drop-shadow(0 0 15px #60a5fa);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+.reveal {
+    animation: reveal .9s ease both;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(25px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
 
 .photos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .photos img {
-  width: 100%;
-  max-width: 240px;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 2px solid #ffd0a1;
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #7dd3fc;
+    box-shadow: 0 0 18px rgba(96, 165, 250, .4);
 }
 
 .letter {
-  text-align: left;
-  line-height: 1.9;
-  white-space: pre-line;
+    text-align: left;
+    white-space: pre-line;
+    line-height: 1.9;
+    color: #edf7ff;
 }
 
-.orange { color: #ffd0a1; }
-#message { color: #ffbd9a; }
+.cake {
+    font-size: 75px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px #60a5fa); }
+    to { filter: drop-shadow(0 0 22px #f9a8d4); }
+}
+
+.confetti {
+    position: fixed;
+    top: -15px;
+    z-index: 10;
+    width: 9px;
+    height: 13px;
+    pointer-events: none;
+    animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(800deg);
+        opacity: .2;
+    }
+}
+
+footer {
+    margin-top: 35px;
+    color: #b8d8ff;
+    font-size: 13px;
+}
+
+@media (max-width: 420px) {
+    .photos img { height: 175px; }
+    .card { padding: 20px 14px; }
+}
 </style>
 </head>
 
 <body>
-<section class="card" id="lock">
-  <div style="font-size:55px">🍥</div>
-  <p>✨ A SPECIAL SURPRISE ✨</p>
-  <h1>Hey, Vicky! 💙</h1>
-  <p>Someone has prepared something special for you.</p>
 
-  <form id="passwordForm">
-    <input id="password" type="password"
-           placeholder="Enter secret password" required>
-    <button type="submit">Open Your Surprise 🎁</button>
-  </form>
+<div id="stars"></div>
 
-  <p id="message"></p>
-</section>
+<div class="container">
 
-<section class="card" id="birthday">
-  <div style="font-size:55px">🎂</div>
-  <h1>Happy Birthday Vicky! 💙</h1>
-  <p>Today is your special day! ✨</p>
+    <!-- PASSWORD SCREEN -->
+    <section id="passwordScreen" class="card reveal">
+        <h1>💙 A Special Surprise 💙</h1>
+        <p>Someone special has a birthday surprise waiting for you...</p>
+        <div style="font-size:55px;">🔐</div>
 
-  <div class="photos">
-    <img src="vignesh.jpg.jpg" alt="Vignesh photo 1"
-         onerror="this.style.display='none'">
-    <img src="vignesh2.jpg.jpg" alt="Vignesh photo 2"
-         onerror="this.style.display='none'">
-  </div>
+        <input id="password" type="password"
+               placeholder="Enter your secret password">
 
-  <div class="letter">Dear Vignesh 💙,
+        <br>
+        <button onclick="unlock()">Unlock Your Surprise 💌</button>
+        <p id="error" style="color:#fda4af;"></p>
+    </section>
+
+    <!-- GIFT SCREEN -->
+    <section id="giftScreen" class="hidden">
+        <h1>Hey Vicky! 💙</h1>
+        <p>Your special day deserves a special surprise!</p>
+
+        <div class="card">
+            <div class="gift" onclick="openGift()">🎁</div>
+            <h2>One little gift, just for you!</h2>
+            <p>Tap the gift to open your birthday surprise ✨</p>
+            <button onclick="openGift()">Open Your Surprise 💙</button>
+        </div>
+    </section>
+
+    <!-- BIRTHDAY SURPRISE -->
+    <main id="surprise" class="hidden">
+
+        <div class="reveal">
+            <h1>🎉 Happy Birthday Vicky! 🎉</h1>
+            <p>Today is all about YOU! 💙</p>
+        </div>
+
+        <section class="card reveal">
+            <div class="cake">🎂</div>
+            <h2>Happy Birthday, Vignesh! 💙</h2>
+            <p>
+                A new year, new memories, new dreams,
+                and lots of happiness waiting for you! ✨
+            </p>
+        </section>
+
+        <section class="card reveal">
+            <h2>📸 Our Memories 💙</h2>
+
+            <div class="photos">
+                <img src="vignesh.jpg.jpg"
+                     alt="Vignesh photo 1"
+                     onerror="this.alt='Photo 1 not found'; this.style.display='none';">
+
+                <img src="vignesh2.jpg.jpg"
+                     alt="Vignesh photo 2"
+                     onerror="this.alt='Photo 2 not found'; this.style.display='none';">
+            </div>
+
+            <p>Some people make life more special just by being in it. 💙</p>
+        </section>
+
+        <section class="card reveal">
+            <h2>💌 A Little Letter For You</h2>
+
+            <div class="letter">
+Dear Vignesh 💙,
 
 Wish u many many more happy returns of the day, Vicky! 🥳
 
-Happy ya iru... ethukum feel panatha. You are my special person, and I'm so grateful to have you in my life.
+Happy ya iru... ethukum feel panatha.
+
+You are my special person, and I'm so grateful to have you in my life.
 
 Nobody can replace you in my heart. 💙
 
@@ -128,28 +283,84 @@ On your special day, I wish you lots of happiness, success, peace, and endless s
 
 Always stay happy, Vicky. Never forget how special you are! ✨
 
-<div style="text-align:center" class="orange">
 With lots of love and care 💙
-Your Special Someone 🫶
-</div>
-  </div>
 
-  <h2 class="orange">🎉 This surprise is just for you! 🎉</h2>
-</section>
+Your Special Someone 🫶
+            </div>
+        </section>
+
+        <section class="card reveal">
+            <h2>🌟 One Last Birthday Wish 🌟</h2>
+            <p>May your life always shine as brightly as the stars. Keep smiling, Vicky! 💙</p>
+            <button onclick="celebrate()">Celebrate Again 🎉</button>
+        </section>
+
+    </main>
+
+    <footer>Made with 💙 for Vignesh</footer>
+</div>
 
 <script>
-document.getElementById("passwordForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// Twinkling stars
+const stars = document.getElementById("stars");
 
-  if (document.getElementById("password").value === "VH 2007") {
-    document.getElementById("lock").style.display = "none";
-    document.getElementById("birthday").style.display = "block";
-    window.scrollTo(0, 0);
-  } else {
-    document.getElementById("message").textContent =
-      "Wrong password! Please try again 💙";
-  }
+for (let i = 0; i < 100; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    stars.appendChild(star);
+}
+
+// Password check
+function unlock() {
+    const entered = document.getElementById("password").value.trim();
+
+    if (entered === "VH 2007") {
+        document.getElementById("passwordScreen").classList.add("hidden");
+        document.getElementById("giftScreen").classList.remove("hidden");
+        document.getElementById("giftScreen").classList.add("reveal");
+        celebrate();
+    } else {
+        document.getElementById("error").textContent =
+            "Wrong password! Try again 💙";
+    }
+}
+
+// Allow Enter key
+document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        unlock();
+    }
 });
+
+// Open the gift
+function openGift() {
+    document.getElementById("giftScreen").classList.add("hidden");
+    document.getElementById("surprise").classList.remove("hidden");
+    document.getElementById("surprise").classList.add("reveal");
+    celebrate();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Confetti animation
+function celebrate() {
+    const colors = ["#93c5fd", "#67e8f9", "#f9a8d4", "#fde68a", "#c4b5fd"];
+
+    for (let i = 0; i < 100; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 1.5 + "s";
+        piece.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 6000);
+    }
+}
 </script>
+
 </body>
 </html>
