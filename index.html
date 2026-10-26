@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Vicky 💙</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e40af, #020617 75%);
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+  padding: 25px 12px;
+}
+
+.stars {
+  color: #bfdbfe;
+  letter-spacing: 10px;
+  font-size: 22px;
+  animation: glow 2s infinite alternate;
+}
+
+.card {
+  max-width: 550px;
+  margin: 25px auto;
+  padding: 28px 20px;
+  border: 1px solid #60a5fa;
+  border-radius: 24px;
+  background: rgba(2, 6, 23, .86);
+  box-shadow: 0 0 25px #1d4ed8;
+}
+
+h1 { color: #93c5fd; }
+
+.naruto { font-size: 55px; }
+
+button {
+  background: #2563eb;
+  color: white;
+  border: 1px solid #93c5fd;
+  padding: 14px 22px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#letter {
+  display: none;
+  text-align: left;
+  line-height: 1.9;
+  padding-top: 20px;
+  animation: appear 1.5s ease;
+}
+
+.ending {
+  color: #93c5fd;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes glow {
+  from { opacity: .6; }
+  to { opacity: 1; text-shadow: 0 0 15px #60a5fa; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart { color: #93c5fd; font-size: 22px; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="stars">✦ ★ ✦ ★ ✦</div>
+  <div class="naruto">🍥💙</div>
+
+  <h1>Happy Birthday, Vicky! 🎂</h1>
+  <p>A little surprise made just for you ✨</p>
+  <p>Believe in yourself, always! 🍥</p>
+
+  <button onclick="openLetter()" id="btn">
+    🎁 Open Your Surprise 💌
+  </button>
+
+  <div id="letter">
+    <h2 class="ending">Dear Vignesh, 💌</h2>
+
+    <p>
+      Wish you many, many more happy returns of the day,
+      Vicky! 💙🎂 Happy-ah iru, edhukkum feel pannadha,
+      enoda special person! 😻
+    </p>
+
+    <p>
+      I'm so grateful to have you in my life! ❤️‍🩹
+      You bring so much warmth and sweetness into my life.
+      💌 Every moment with you is precious! ❣️
+    </p>
+
+    <p>
+      <b>Nobody can replace you in my heart. ❤️🫂</b>
+    </p>
+
+    <p>
+      On your special day, I wish you all the happiness,
+      love, and joy that you deserve. 🦋 May this year bring
+      you countless beautiful moments and wonderful memories! ✨
+    </p>
+
+    <p>
+      You are myyy best best best friend 💙,
+      best best best person in my life 😘🫶🏻,
+      myy favvvvvvvv person! 🤌🏻🥹
+    </p>
+
+    <p>
+      Here's to celebrating you today and always! 🎉
+    </p>
+
+    <p class="ending">
+      HAPPY BIRTHDAY, MY VICKY! 🎂💙🍥
+    </p>
+
+    <p class="ending">
+      With love and best wishes,<br>
+      Your Special Someone 💝
+    </p>
+
+    <div class="ending heart">♥ ♥ ♥</div>
+  </div>
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("btn").textContent = "Your Special Letter 💙";
+}
+</script>
+
+</body>
+</html>
