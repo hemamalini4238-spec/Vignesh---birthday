@@ -1,5 +1,3 @@
-VIGNESH BIRTHDAY WEBSITE — COMPLETE CODE
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,228 +6,123 @@ VIGNESH BIRTHDAY WEBSITE — COMPLETE CODE
 <title>For Vicky 💙</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-    min-height: 100vh;
-    font-family: Georgia, serif;
-    color: white;
-    text-align: center;
-    background:
-        radial-gradient(circle at top, #173c78, transparent 45%),
-        linear-gradient(135deg, #020817, #071b3c, #030712);
-    overflow-x: hidden;
-}
-
-.stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.star {
-    position: absolute;
-    color: #b8d9ff;
-    animation: twinkle 3s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.2; transform: scale(0.7); }
-    to { opacity: 1; transform: scale(1.2); }
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background: radial-gradient(circle at top, #174078, #061329 60%, #020611);
+  padding: 25px 15px;
 }
 
 .container {
-    position: relative;
-    z-index: 1;
-    width: min(90%, 650px);
-    margin: auto;
-    padding: 55px 0 45px;
-}
-
-.small-title {
-    color: #9ccaff;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
+  max-width: 600px;
+  margin: 50px auto;
 }
 
 h1 {
-    font-size: clamp(35px, 8vw, 58px);
-    margin-bottom: 15px;
-    text-shadow: 0 0 25px #398cff;
+  font-size: clamp(32px, 8vw, 50px);
+  text-shadow: 0 0 20px #4b9dff;
 }
 
-.orange {
-    color: #ffad66;
+.orange { color: #ffc18a; }
+
+.card {
+  padding: 25px;
+  border: 1px solid #477cb8;
+  border-radius: 22px;
+  background: #0a1c36;
+  box-shadow: 0 0 25px #245c9b55;
 }
 
-.subtitle {
-    color: #d5e6ff;
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-.naruto {
-    font-size: 55px;
-    margin: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+input {
+  width: 90%;
+  max-width: 300px;
+  padding: 14px;
+  margin: 15px 0;
+  border-radius: 12px;
+  border: 1px solid #8dbfff;
+  font-size: 16px;
+  text-align: center;
 }
 
 button {
-    border: none;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #06152d;
-    background: linear-gradient(135deg, #ffbd7b, #ffe3b8);
-    box-shadow: 0 0 25px #ffad6650;
-    transition: transform 0.3s;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #ffc18a;
+  color: #061329;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-button:hover {
-    transform: scale(1.05);
-}
+#birthday { display: none; }
 
-.card {
-    display: none;
-    margin-top: 35px;
-    padding: 25px;
-    border: 1px solid #6aaeff55;
-    border-radius: 25px;
-    background: #0b1b35cc;
-    box-shadow: 0 0 35px #1b68c533;
-    animation: appear 1s ease;
-}
-
-@keyframes appear {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
+.letter {
+  text-align: left;
+  white-space: pre-line;
+  line-height: 1.9;
+  color: #e1edff;
+  margin-top: 25px;
 }
 
 .photo {
-    width: min(100%, 300px);
-    max-height: 360px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 2px solid #ffbd7b;
-    margin: 20px auto;
-    display: block;
-    box-shadow: 0 0 25px #398cff55;
+  width: 90%;
+  max-width: 300px;
+  border-radius: 18px;
+  border: 2px solid #ffc18a;
+  margin: 20px auto;
 }
 
-.photo-note {
-    color: #a8cfff;
-    font-size: 13px;
-    margin: 12px 0;
-}
+#message { color: #ffc18a; }
 
-.letter {
-    text-align: left;
-    line-height: 1.9;
-    color: #e2edff;
-    font-size: 16px;
-    margin-top: 20px;
-    white-space: pre-line;
-}
-
-.ending {
-    color: #ffbd7b;
-    font-size: 20px;
-    line-height: 1.7;
-    margin-top: 25px;
-}
-
-.cake {
-    font-size: 65px;
-    margin: 25px 0 10px;
-    animation: float 2s infinite;
-}
-
-.footer {
-    color: #8faed8;
-    font-size: 12px;
-    margin-top: 40px;
-}
-
-.confetti {
-    position: fixed;
-    top: -20px;
-    z-index: 10;
-    pointer-events: none;
-    animation: fall 4s linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
+#confetti {
+  font-size: 28px;
+  margin: 20px;
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="stars" id="stars"></div>
+  <section class="card" id="lock">
+    <div style="font-size:55px">🍥</div>
+    <p style="letter-spacing:3px;color:#9ccaff">A SPECIAL SURPRISE</p>
+    <h1>Hey, <span class="orange">Vicky!</span> 💙</h1>
+    <p>Someone has prepared something special for you.</p>
+    <p>🔐 Enter the secret password</p>
 
-<main class="container">
+    <form id="passwordForm">
+      <input id="password" type="password"
+             placeholder="Enter password"
+             autocomplete="off" required>
+      <br>
+      <button type="submit">Open My Surprise 🎁</button>
+    </form>
 
-    <p class="small-title">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+    <p id="message"></p>
+  </section>
 
-    <div class="naruto">🍥</div>
+  <section class="card" id="birthday">
+    <div style="font-size:60px">🎂</div>
+    <h1>Happy Birthday <span class="orange">Vicky!</span> 💙</h1>
+    <p>Today is your special day! ✨</p>
 
-    <h1>Happy Birthday<br><span class="orange">Vicky!</span> 💙</h1>
+    <img class="photo" src="vignesh.jpg" alt="Vignesh"
+         onerror="this.style.display='none'">
 
-    <p class="subtitle">
-        Today is all about you.<br>
-        Someone has a little surprise waiting for you...
-    </p>
-
-    <button id="openButton" onclick="openSurprise()">
-        🎁 Open Your Surprise
-    </button>
-
-    <section class="card" id="surprise">
-
-        <h2>For My Favourite Person 💙</h2>
-
-        <!-- Upload Vignesh's photo as vignesh.jpg -->
-        <img
-            class="photo"
-            src="vignesh.jpg"
-            alt="Vignesh's photo"
-            onerror="this.style.display='none'; document.getElementById('photoNote').style.display='block';"
-        >
-
-        <p class="photo-note" id="photoNote" style="display:none">
-            📸 Add Vignesh's photo as vignesh.jpg in your repository.
-        </p>
-
-        <div class="cake">🎂</div>
-
-        <h2 class="orange">Many Many Happy Returns! 🎉</h2>
-
-        <div class="letter">Dear Vignesh 💙,
+    <div class="letter">Dear Vignesh 💙,
 
 Wish u many many more happy returns of the day, Vicky! 🥳
 
 Happy ya iru... ethukum feel panatha. You are my special person, and I'm so grateful to have you in my life.
 
-Thank you for being a part of my life and for giving me so many beautiful memories. No matter what happens, I always wish the best for you.
+Thank you for being a part of my life and for giving me so many beautiful memories.
 
 Nobody can replace you in my heart. 💙
 
@@ -239,70 +132,34 @@ On your special day, I wish you lots of happiness, success, peace, and endless s
 
 Always stay happy, Vicky. Never forget how special you are! ✨
 
-<div class="ending">With lots of love and care 💙<br>Your Special Someone 🫶</div>
-        </div>
+<div style="text-align:center;color:#ffc18a;font-size:20px">
+With lots of love and care 💙
+Your Special Someone 🫶
+</div>
+    </div>
 
-        <div class="cake">🎉 🎂 🎉</div>
+    <div id="confetti">🎉 🎊 🎉</div>
+    <h2 class="orange">This little surprise is just for you! 💙</h2>
+  </section>
 
-        <button onclick="celebrate()">🎊 One More Surprise!</button>
-
-        <p class="subtitle" id="extraMessage" style="display:none; margin-top:25px">
-            No matter how many people come into your life,<br>
-            you will always have a special place in my heart. 💙
-        </p>
-
-    </section>
-
-    <p class="footer">Made with 💙, especially for Vicky</p>
-
-</main>
+</div>
 
 <script>
-// Create twinkling stars
-const stars = document.getElementById("stars");
+document.getElementById("passwordForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-for (let i = 0; i < 65; i++) {
-    const star = document.createElement("span");
-    star.className = "star";
-    star.textContent = "✦";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.fontSize = (Math.random() * 10 + 5) + "px";
-    star.style.animationDelay = Math.random() * 3 + "s";
-    stars.appendChild(star);
-}
+  const entered = document.getElementById("password").value;
+  const message = document.getElementById("message");
 
-function openSurprise() {
-    document.getElementById("surprise").style.display = "block";
-    document.getElementById("openButton").style.display = "none";
-
-    document.getElementById("surprise").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-    celebrate();
-}
-
-function celebrate() {
-    const symbols = ["💙", "✨", "🎉", "🧡", "⭐", "🎊"];
-
-    for (let i = 0; i < 65; i++) {
-        const piece = document.createElement("span");
-        piece.className = "confetti";
-        piece.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        piece.style.left = Math.random() * 100 + "vw";
-        piece.style.fontSize = (Math.random() * 16 + 12) + "px";
-        piece.style.animationDuration = (Math.random() * 2 + 3) + "s";
-
-        document.body.appendChild(piece);
-
-        setTimeout(() => piece.remove(), 5000);
-    }
-
-    document.getElementById("extraMessage").style.display = "block";
-}
+  // Basic surprise lock only; this is not secure authentication.
+  if (entered === "VH 2007") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("birthday").style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    message.textContent = "Wrong password! Try again 💙";
+  }
+});
 </script>
-
 </body>
 </html>
