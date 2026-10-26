@@ -2,127 +2,123 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Vicky 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Vicky 💙</title>
 
 <style>
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
+  padding: 20px;
   min-height: 100vh;
   font-family: Georgia, serif;
-  color: white;
   text-align: center;
-  background: radial-gradient(circle at top, #174078, #061329 60%, #020611);
-  padding: 25px 15px;
+  color: white;
+  background: linear-gradient(135deg, #020817, #102d59, #030712);
 }
 
-.container {
+.card {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 35px auto;
+  padding: 25px;
+  background: #0a1b35;
+  border: 1px solid #5489c9;
+  border-radius: 24px;
+  box-shadow: 0 0 25px #4b9dff40;
 }
 
 h1 {
-  font-size: clamp(32px, 8vw, 50px);
-  text-shadow: 0 0 20px #4b9dff;
-}
-
-.orange { color: #ffc18a; }
-
-.card {
-  padding: 25px;
-  border: 1px solid #477cb8;
-  border-radius: 22px;
-  background: #0a1c36;
-  box-shadow: 0 0 25px #245c9b55;
-}
-
-input {
-  width: 90%;
-  max-width: 300px;
-  padding: 14px;
-  margin: 15px 0;
-  border-radius: 12px;
-  border: 1px solid #8dbfff;
-  font-size: 16px;
-  text-align: center;
+  color: #ffd0a1;
+  font-size: clamp(30px, 7vw, 46px);
 }
 
 button {
-  padding: 13px 22px;
-  border: none;
+  padding: 13px 23px;
+  border: 0;
   border-radius: 25px;
-  background: #ffc18a;
-  color: #061329;
+  background: #ffd0a1;
+  color: #07152c;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
 
+input {
+  display: block;
+  width: 90%;
+  max-width: 300px;
+  margin: 18px auto;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #8abaff;
+  font-size: 16px;
+  text-align: center;
+}
+
 #birthday { display: none; }
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.photos img {
+  width: 100%;
+  max-width: 240px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #ffd0a1;
+}
 
 .letter {
   text-align: left;
-  white-space: pre-line;
   line-height: 1.9;
-  color: #e1edff;
-  margin-top: 25px;
+  white-space: pre-line;
 }
 
-.photo {
-  width: 90%;
-  max-width: 300px;
-  border-radius: 18px;
-  border: 2px solid #ffc18a;
-  margin: 20px auto;
-}
-
-#message { color: #ffc18a; }
-
-#confetti {
-  font-size: 28px;
-  margin: 20px;
-}
+.orange { color: #ffd0a1; }
+#message { color: #ffbd9a; }
 </style>
 </head>
 
 <body>
-<div class="container">
+<section class="card" id="lock">
+  <div style="font-size:55px">🍥</div>
+  <p>✨ A SPECIAL SURPRISE ✨</p>
+  <h1>Hey, Vicky! 💙</h1>
+  <p>Someone has prepared something special for you.</p>
 
-  <section class="card" id="lock">
-    <div style="font-size:55px">🍥</div>
-    <p style="letter-spacing:3px;color:#9ccaff">A SPECIAL SURPRISE</p>
-    <h1>Hey, <span class="orange">Vicky!</span> 💙</h1>
-    <p>Someone has prepared something special for you.</p>
-    <p>🔐 Enter the secret password</p>
+  <form id="passwordForm">
+    <input id="password" type="password"
+           placeholder="Enter secret password" required>
+    <button type="submit">Open Your Surprise 🎁</button>
+  </form>
 
-    <form id="passwordForm">
-      <input id="password" type="password"
-             placeholder="Enter password"
-             autocomplete="off" required>
-      <br>
-      <button type="submit">Open My Surprise 🎁</button>
-    </form>
+  <p id="message"></p>
+</section>
 
-    <p id="message"></p>
-  </section>
+<section class="card" id="birthday">
+  <div style="font-size:55px">🎂</div>
+  <h1>Happy Birthday Vicky! 💙</h1>
+  <p>Today is your special day! ✨</p>
 
-  <section class="card" id="birthday">
-    <div style="font-size:60px">🎂</div>
-    <h1>Happy Birthday <span class="orange">Vicky!</span> 💙</h1>
-    <p>Today is your special day! ✨</p>
-
-    <img class="photo" src="vignesh2.jpg.jpg" alt="Vignesh photo 2"
+  <div class="photos">
+    <img src="vignesh.jpg.jpg" alt="Vignesh photo 1"
          onerror="this.style.display='none'">
+    <img src="vignesh2.jpg.jpg" alt="Vignesh photo 2"
+         onerror="this.style.display='none'">
+  </div>
 
-    <div class="letter">Dear Vignesh 💙,
+  <div class="letter">Dear Vignesh 💙,
 
 Wish u many many more happy returns of the day, Vicky! 🥳
 
 Happy ya iru... ethukum feel panatha. You are my special person, and I'm so grateful to have you in my life.
-
-Thank you for being a part of my life and for giving me so many beautiful memories.
 
 Nobody can replace you in my heart. 💙
 
@@ -132,32 +128,26 @@ On your special day, I wish you lots of happiness, success, peace, and endless s
 
 Always stay happy, Vicky. Never forget how special you are! ✨
 
-<div style="text-align:center;color:#ffc18a;font-size:20px">
+<div style="text-align:center" class="orange">
 With lots of love and care 💙
 Your Special Someone 🫶
 </div>
-    </div>
+  </div>
 
-    <div id="confetti">🎉 🎊 🎉</div>
-    <h2 class="orange">This little surprise is just for you! 💙</h2>
-  </section>
-
-</div>
+  <h2 class="orange">🎉 This surprise is just for you! 🎉</h2>
+</section>
 
 <script>
-document.getElementById("passwordForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById("passwordForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  const entered = document.getElementById("password").value;
-  const message = document.getElementById("message");
-
-  // Basic surprise lock only; this is not secure authentication.
-  if (entered === "VH 2007") {
+  if (document.getElementById("password").value === "VH 2007") {
     document.getElementById("lock").style.display = "none";
     document.getElementById("birthday").style.display = "block";
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   } else {
-    message.textContent = "Wrong password! Try again 💙";
+    document.getElementById("message").textContent =
+      "Wrong password! Please try again 💙";
   }
 });
 </script>
