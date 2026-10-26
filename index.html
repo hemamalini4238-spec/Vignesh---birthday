@@ -3,584 +3,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Vignesh 💙</title>
+
+<title>Happy Birthday Vignesh 💙🎂</title>
+<meta name="description" content="A little birthday surprise made just for you! 🎁💙">
+<meta property="og:title" content="A Special Birthday Surprise for Vignesh 💙🎂">
+<meta property="og:description" content="A little surprise made just for you! Open your special birthday gift 🎁💙">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07152e">
 
 <style>
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-  text-align: center;
-  background: radial-gradient(circle at top, #153d75, #020817 75%);
-  min-height: 100vh;
-  overflow-x: hidden;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #020617, #071b3b, #101044);
 }
 
-.screen {
-  display: none;
-  min-height: 100vh;
-  padding: 30px 18px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  animation: fadeIn 0.8s ease;
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#9bc9ff 1px, transparent 1px);
+    background-size: 70px 70px, 110px 110px;
+    background-position: 0 0, 35px 45px;
+    opacity: 0.35;
 }
 
-.screen.active {
-  display: flex;
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 750px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 35px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-  color: #8ecbff;
-  text-shadow: 0 0 15px #248cff;
+    color: #8ed8ff;
+    font-size: clamp(27px, 6vw, 42px);
+    text-shadow: 0 0 15px #168bff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #b8e8ff;
+    margin: 15px 0;
 }
 
 p {
-  line-height: 1.8;
+    line-height: 1.8;
+    margin: 12px 0;
 }
 
 button {
-  padding: 13px 25px;
-  border: 1px solid #9bd2ff;
-  border-radius: 30px;
-  background: linear-gradient(120deg, #1257d8, #299aff);
-  color: white;
-  font-size: 16px;
-  margin: 12px;
-  cursor: pointer;
-  box-shadow: 0 0 15px #147bff66;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 25px;
+    margin: 12px 5px;
+    background: linear-gradient(135deg, #55c8ff, #8b83ff);
+    color: #06132d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 18px #358fff55;
+    transition: transform 0.25s;
 }
 
-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+button:hover {
+    transform: scale(1.06);
 }
 
 input {
-  padding: 14px;
-  border-radius: 25px;
-  border: 1px solid #8ecbff;
-  background: #061a35;
-  color: white;
-  width: 260px;
-  max-width: 90%;
-  font-size: 16px;
-  margin: 15px;
+    width: 85%;
+    max-width: 300px;
+    padding: 14px;
+    margin: 18px 0;
+    border-radius: 12px;
+    border: 2px solid #68cfff;
+    outline: none;
+    text-align: center;
+    font-size: 17px;
+    background: #071b3b;
+    color: white;
 }
 
-.big {
-  font-size: 75px;
-  margin: 15px;
+.card {
+    width: 100%;
+    max-width: 650px;
+    padding: 25px 18px;
+    margin: 15px 0;
+    border-radius: 22px;
+    background: #ffffff0d;
+    border: 1px solid #7dcfff55;
+    box-shadow: 0 0 25px #168bff22;
+    backdrop-filter: blur(8px);
 }
+
+.hidden {
+    display: none !important;
+}
+
+.emoji {
+    font-size: 65px;
+    margin: 20px 0;
+}
+
+.gift {
+    font-size: 100px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Balloons */
 
 .balloon-area {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
 }
 
 .balloon {
-  width: 85px;
-  height: 105px;
-  border-radius: 50% 50% 45% 45%;
-  font-size: 28px;
-  background: linear-gradient(135deg, #ff72ce, #b21dff);
-  box-shadow: 0 0 18px #ff72ce88;
-  transition: transform 0.3s, opacity 0.3s;
+    width: 75px;
+    height: 95px;
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    animation: float 2s infinite ease-in-out;
+    box-shadow: inset -8px -8px 15px #0003,
+                0 0 15px #ffffff33;
 }
 
-.balloon:nth-child(2) {
-  background: linear-gradient(135deg, #65d5ff, #1765ff);
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 35px;
+    background: #ffffff88;
+    top: 93px;
+    left: 50%;
 }
 
-.balloon:nth-child(3) {
-  background: linear-gradient(135deg, #d98aff, #6d32ff);
-}
+.balloon:nth-child(1) { background: #ff5d9e; }
+.balloon:nth-child(2) { background: #42cfff; animation-delay: .3s; }
+.balloon:nth-child(3) { background: #a78bfa; animation-delay: .6s; }
+.balloon:nth-child(4) { background: #ffbd59; animation-delay: .9s; }
 
-.balloon:nth-child(4) {
-  background: linear-gradient(135deg, #59fff1, #008cba);
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
 }
 
 .balloon.popped {
-  transform: scale(0);
-  opacity: 0;
-  pointer-events: none;
+    animation: pop .25s forwards;
+    pointer-events: none;
 }
 
-#balloonMessage {
-  color: #b5e0ff;
-  font-size: 18px;
-  min-height: 55px;
-  margin: 15px;
+@keyframes pop {
+    to {
+        transform: scale(1.7);
+        opacity: 0;
+    }
 }
+
+#balloonMeaning {
+    color: #ffd8f0;
+    font-size: 18px;
+    min-height: 55px;
+}
+
+/* Cake */
 
 .cake {
-  font-size: 100px;
-  animation: cakeBounce 2s infinite;
+    font-size: 100px;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
 }
 
-.candle {
-  font-size: 30px;
-}
+/* Flowers */
 
 .bouquet {
-  font-size: 100px;
-  animation: float 2s infinite;
+    font-size: 80px;
+    animation: float 2s infinite;
 }
 
-.photos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+/* Photos */
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 20px 0;
 }
 
-.photos img {
-  width: 42%;
-  max-width: 230px;
-  height: 280px;
-  object-fit: cover;
-  object-position: center 25%;
-  border: 5px solid white;
-  border-radius: 10px;
-  box-shadow: 0 0 18px #54aaff;
+.photo-grid img {
+    width: min(100%, 250px);
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #81d4ff;
+    box-shadow: 0 0 22px #359fff66;
 }
 
-.envelope {
-  font-size: 110px;
-  cursor: pointer;
-  animation: float 2s infinite ease-in-out;
-}
+/* Letter */
 
 .letter {
-  display: none;
-  max-width: 650px;
-  width: 100%;
-  background: #fff5df;
-  color: #342345;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: left;
-  line-height: 1.9;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  box-shadow: 0 0 25px #7bbcff;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 1.9;
+    font-size: 16px;
+    color: #f2f7ff;
+    min-height: 200px;
+    overflow-wrap: anywhere;
 }
 
-.letter.show {
-  display: block;
-  animation: fadeIn 1s ease;
+.signature {
+    color: #8ed8ff;
+    font-weight: bold;
 }
 
-.next {
-  display: none;
+/* Final screen */
+
+.final-title {
+    font-size: clamp(30px, 7vw, 48px);
+    color: #9ce7ff;
+    animation: glow 1.5s infinite alternate;
 }
 
-.next.show {
-  display: inline-block;
-}
-
-/* Final birthday animation */
-#s8.active {
-  background: radial-gradient(circle, #173e79, #020817 75%);
-  animation: finalReveal 1.5s ease;
-  overflow: hidden;
-}
-
-#s8 h1 {
-  font-size: clamp(30px, 7vw, 55px);
-  animation: birthdayGlow 2s infinite alternate;
+@keyframes glow {
+    from { text-shadow: 0 0 8px #55c8ff; }
+    to { text-shadow: 0 0 30px #ff80c8, 0 0 45px #55c8ff; }
 }
 
 .final-cake {
-  font-size: 100px;
-  animation: cakeBounce 1.5s infinite;
+    font-size: 100px;
+    animation: bounce 1.5s infinite;
 }
 
-.final-message {
-  font-size: 22px;
-  color: #c8e7ff;
-  animation: fadeIn 2s ease;
+.heart {
+    position: fixed;
+    bottom: -30px;
+    z-index: 5;
+    pointer-events: none;
+    animation: heartRise 5s linear forwards;
 }
 
-.final-hearts {
-  font-size: 35px;
-  animation: heartBeat 1.2s infinite;
+@keyframes heartRise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 .confetti {
-  position: fixed;
-  top: -30px;
-  z-index: 5;
-  pointer-events: none;
-  animation: fall 4s linear forwards;
+    position: fixed;
+    top: -20px;
+    z-index: 6;
+    pointer-events: none;
+    animation: confettiFall 4s linear forwards;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes cakeBounce {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-15px) rotate(3deg);
-  }
-}
-
-@keyframes finalReveal {
-  from {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes birthdayGlow {
-  from {
-    text-shadow: 0 0 10px #258bff;
-  }
-  to {
-    text-shadow: 0 0 30px #8ed5ff, 0 0 50px #258bff;
-  }
-}
-
-@keyframes heartBeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-@media(max-width: 480px) {
-  .photos img {
-    height: 220px;
-  }
-
-  .letter {
-    padding: 18px;
+.small-text {
+    color: #b7dfff;
     font-size: 14px;
-  }
+}
+
+footer {
+    margin-top: 25px;
+    color: #91b9dc;
+    font-size: 12px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- STEP 1: PASSWORD -->
-<section class="screen active" id="s1">
-  <h1>💙 A Secret Surprise 💙</h1>
-  <p>Someone special has made a surprise just for you!</p>
-  <div class="big">🔐</div>
+<div class="stars"></div>
 
-  <input id="password" type="password" placeholder="Enter password">
+<div class="container">
 
-  <button onclick="unlock()">Unlock Your Surprise 💙</button>
-  <p>Hint: VH 2007</p>
-  <p id="passwordError"></p>
-</section>
+    <!-- STEP 1: PASSWORD -->
 
-<!-- STEP 2: GIFT -->
-<section class="screen" id="s2">
-  <h1>Hey Vicky! 💙</h1>
-  <p>Your birthday surprise is waiting!</p>
+    <section id="step1" class="card">
+        <h1>💙 A Little Surprise 💙</h1>
+        <p>Someone special has a birthday surprise waiting for you.</p>
+        <div class="emoji">🎁✨</div>
+        <p>Enter the secret password to open your gift.</p>
 
-  <div class="big" id="gift">🎁</div>
-  <p id="giftMessage">Tap the gift to open it ✨</p>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            autocomplete="off"
+        >
 
-  <button id="openGift" onclick="openGift()">Open Gift 🎁</button>
-  <button class="next" id="n2" onclick="go(3)">Next Surprise ➜</button>
-</section>
+        <br>
 
-<!-- STEP 3: BALLOONS -->
-<section class="screen" id="s3">
-  <h1>🎈 Four Special Balloons 🎈</h1>
-  <p>Click every balloon to discover its meaning!</p>
+        <button onclick="checkPassword()">Unlock My Surprise 🔐</button>
 
-  <div class="balloon-area">
-    <button class="balloon" onclick="popBalloon(0,this)">1</button>
-    <button class="balloon" onclick="popBalloon(1,this)">2</button>
-    <button class="balloon" onclick="popBalloon(2,this)">3</button>
-    <button class="balloon" onclick="popBalloon(3,this)">4</button>
-  </div>
+        <p id="passwordError" style="color:#ff9eb8;"></p>
+        <p class="small-text">A little surprise made with love 💙</p>
+    </section>
 
-  <p id="balloonMessage">Four balloons, four special meanings 💙</p>
-  <p id="balloonCount">Popped: 0 / 4</p>
 
-  <button class="next" id="n3" onclick="go(4)">Next Surprise ➜</button>
-</section>
+    <!-- STEP 2: GIFT BOX -->
 
-<!-- STEP 4: CAKE -->
-<section class="screen" id="s4">
-  <h1>Happy Birthday, Vicky! 🎂</h1>
-  <p>Make a birthday wish!</p>
+    <section id="step2" class="card hidden">
+        <h1>Yay! You Made It! 🎉</h1>
+        <p>Your special birthday surprise is ready!</p>
 
-  <div class="candle" id="candles">🕯️ 🕯️ 🕯️ 🕯️</div>
-  <div class="cake">🎂</div>
+        <div class="gift" onclick="showStep(3)">🎁</div>
 
-  <button id="blow" onclick="blowCandles()">Blow Candles 🕯️</button>
-  <p id="cakeMessage"></p>
+        <p>Tap the gift box to open it 💙</p>
+        <button onclick="showStep(3)">Open My Gift 🎁</button>
+    </section>
 
-  <button class="next" id="n4" onclick="go(5)">Next Surprise ➜</button>
-</section>
 
-<!-- STEP 5: FLOWERS -->
-<section class="screen" id="s5">
-  <h1>Flowers for You 💐</h1>
-  <p>A beautiful bouquet just for you!</p>
+    <!-- STEP 3: BALLOONS -->
 
-  <div class="bouquet" id="flowers">💐</div>
+    <section id="step3" class="card hidden">
+        <h1>Four Little Wishes 🎈</h1>
+        <p>Tap each balloon to discover a special wish.</p>
 
-  <button id="openFlowers" onclick="openFlowers()">Open Your Bouquet 🌷</button>
-  <p id="flowerMessage"></p>
+        <div class="balloon-area">
+            <div class="balloon" onclick="popBalloon(this,0)">💙</div>
+            <div class="balloon" onclick="popBalloon(this,1)">✨</div>
+            <div class="balloon" onclick="popBalloon(this,2)">🎉</div>
+            <div class="balloon" onclick="popBalloon(this,3)">🦋</div>
+        </div>
 
-  <button class="next" id="n5" onclick="go(6)">Next Surprise ➜</button>
-</section>
+        <p id="balloonMeaning">Pop a balloon to reveal your wish! 💌</p>
 
-<!-- STEP 6: PHOTOS -->
-<section class="screen" id="s6">
-  <h1>Special Memories 💙</h1>
-  <p>Some memories are always special.</p>
+        <button onclick="showStep(4)">Next Surprise ➜</button>
+    </section>
 
-  <div class="photos">
-    <img src="vignesh.jpg.jpg" alt="Vignesh photo 1">
-    <img src="vignesh2.jpg.jpg" alt="Vignesh photo 2">
-  </div>
 
-  <button id="showMemories" onclick="showMemories()">Reveal Memories 💙</button>
-  <p id="memoryMessage"></p>
+    <!-- STEP 4: CAKE -->
 
-  <button class="next" id="n6" onclick="go(7)">Next Surprise 💌</button>
-</section>
+    <section id="step4" class="card hidden">
+        <h1>Make a Birthday Wish! 🎂</h1>
 
-<!-- STEP 7: LETTER -->
-<section class="screen" id="s7">
-  <h1>A Letter for You 💌</h1>
-  <p>One last surprise, from the heart...</p>
+        <div class="cake" onclick="blowCandles()">🎂</div>
 
-  <div class="envelope" id="envelope" onclick="openLetter()">💌</div>
-  <p id="letterHint">Tap the envelope to open your letter.</p>
+        <p id="cakeMessage">
+            It's your special day! Make a wish and tap the cake. 💙
+        </p>
 
-  <div class="letter" id="letter"></div>
+        <button onclick="blowCandles()">Blow the Candles 🕯️</button>
+        <br>
+        <button onclick="showStep(5)">Continue ➜</button>
+    </section>
 
-  <button class="next" id="n7" onclick="go(8)">Next Surprise 💙</button>
-</section>
 
-<!-- STEP 8: GRAND FINALE -->
-<section class="screen" id="s8">
-  <h1>🎉 Happy Birthday Vignesh! 🎉</h1>
+    <!-- STEP 5: FLOWERS -->
 
-  <div class="final-cake">🎂</div>
+    <section id="step5" class="card hidden">
+        <h1>A Bouquet for You 💐</h1>
 
-  <p class="final-message">
-    💙 You are truly a special person! 💙
-  </p>
+        <div class="bouquet">💐</div>
 
-  <div class="final-hearts">💙 ✨ 💖 ✨ 💙</div>
+        <p>
+            Sending you a bouquet filled with happiness,
+            smiles, beautiful memories and lots of love. 💙
+        </p>
 
-  <p>
-    May your life be filled with happiness,
-    beautiful memories and endless smiles! 🫂
-  </p>
+        <p>May your days always be filled with reasons to smile! ✨</p>
 
-  <h2>Made with 💙, just for you!</h2>
+        <button onclick="showStep(6)">One More Surprise ➜</button>
+    </section>
 
-  <p>✨ The End of Your Birthday Surprise ✨</p>
-</section>
+
+    <!-- STEP 6: PHOTOS -->
+
+    <section id="step6" class="card hidden">
+        <h1>Little Memories 📸</h1>
+
+        <p>Some moments deserve to be remembered forever. 💙</p>
+
+        <div class="photo-grid">
+            <img
+                src="vignesh.jpg.jpg"
+                alt="Birthday memory one"
+                onerror="this.alt='Upload vignesh.jpg.jpg to your GitHub repository';"
+            >
+
+            <img
+                src="vignesh2.jpg.jpg"
+                alt="Birthday memory two"
+                onerror="this.alt='Upload vignesh2.jpg.jpg to your GitHub repository';"
+            >
+        </div>
+
+        <p>Every memory has its own little place in our hearts. 🫶🏻</p>
+
+        <button onclick="showStep(7)">Read Your Letter 💌</button>
+    </section>
+
+
+    <!-- STEP 7: LETTER -->
+
+    <section id="step7" class="card hidden">
+        <h1>A Letter for You 💌</h1>
+
+        <p>Some words come straight from the heart. 💙</p>
+
+        <div id="letterText" class="letter"></div>
+
+        <button id="letterButton" class="hidden" onclick="showStep(8)">
+            One Last Surprise 💙
+        </button>
+    </section>
+
+
+    <!-- STEP 8: FINAL BIRTHDAY SCREEN -->
+
+    <section id="step8" class="card hidden">
+        <h1 class="final-title">Happy Birthday Vignesh! 💙</h1>
+
+        <div class="final-cake">🎂</div>
+
+        <h2>Happy Birthday, Vicky! 🎉</h2>
+
+        <p>
+            May your life be filled with happiness, love,
+            success and beautiful memories. ✨
+        </p>
+
+        <p>
+            Keep smiling, keep shining and always be happy! 💙🦋
+        </p>
+
+        <div class="emoji">🎁💐💙🎂✨</div>
+
+        <h2>With lots of birthday wishes! 🫶🏻</h2>
+
+        <p class="small-text">Made especially for you 💌</p>
+
+        <button onclick="celebrateAgain()">Celebrate Again 🎉</button>
+    </section>
+
+    <footer>✨ A little birthday magic just for you ✨</footer>
+
+</div>
+
 
 <script>
-function go(step) {
-  document.querySelectorAll(".screen").forEach(screen => {
-    screen.classList.remove("active");
-  });
 
-  document.getElementById("s" + step).classList.add("active");
-  window.scrollTo(0, 0);
+/* PASSWORD */
 
-  if (step === 8) {
-    launchConfetti();
-  }
-}
+function checkPassword() {
+    const enteredPassword = document.getElementById("password").value;
 
-function unlock() {
-  const password = document.getElementById("password").value;
-
-  if (password.trim().toUpperCase() === "VH 2007") {
-    go(2);
-  } else {
-    document.getElementById("passwordError").textContent =
-      "Incorrect password. Try again 💙";
-  }
-}
-
-function openGift() {
-  document.getElementById("gift").textContent = "🎊🎁✨";
-
-  document.getElementById("giftMessage").textContent =
-    "Your birthday surprises are ready! 💙";
-
-  document.getElementById("openGift").disabled = true;
-  document.getElementById("n2").classList.add("show");
-}
-
-let popped = [false, false, false, false];
-
-const meanings = [
-  "💗 Friendship: You're someone very special to me.",
-  "✨ Happiness: You bring warmth and sweetness into my life.",
-  "🫂 Care: I wish you happiness and beautiful memories.",
-  "💌 Special Place: Nobody can replace you in my heart ❤️"
-];
-
-function popBalloon(index, button) {
-  if (popped[index]) return;
-
-  popped[index] = true;
-  button.classList.add("popped");
-
-  document.getElementById("balloonMessage").textContent =
-    meanings[index];
-
-  const count = popped.filter(Boolean).length;
-
-  document.getElementById("balloonCount").textContent =
-    "Popped: " + count + " / 4";
-
-  if (count === 4) {
-    document.getElementById("balloonMessage").textContent =
-      "You discovered all four meanings! 💙";
-
-    document.getElementById("n3").classList.add("show");
-  }
-}
-
-function blowCandles() {
-  document.getElementById("candles").textContent = "💨";
-
-  document.getElementById("cakeMessage").textContent =
-    "Wish made! May your dreams come true! 💙";
-
-  document.getElementById("blow").disabled = true;
-  document.getElementById("n4").classList.add("show");
-}
-
-function openFlowers() {
-  document.getElementById("flowers").textContent = "💐🌸🌷🌹";
-
-  document.getElementById("flowerMessage").textContent =
-    "Sending you a bouquet full of happiness! 💙";
-
-  document.getElementById("openFlowers").disabled = true;
-  document.getElementById("n5").classList.add("show");
-}
-
-function showMemories() {
-  document.getElementById("memoryMessage").textContent =
-    "Every memory is special. Here's to many more! 💙";
-
-  document.getElementById("showMemories").disabled = true;
-  document.getElementById("n6").classList.add("show");
-}
-
-/* Your exact birthday message */
-const birthdayLetter = `Dear Vignesh ,
-
-Wish u many many more happy returns of the day Vicky💙🎂 happy ya iru eathukum fell panatha enoda  special person 😻
-I'm so grateful to have you in my life❤️‍🩹!!
-
-You bring so much warmth and sweetness into my life💌 Every moment with you is precious❣️
-
-Nobody can replace you in my heart ❤️ 🫂
-
-On your special day, 😌I wish you all the happiness, love, and joy that you deserve🫠May this year bring you countless beautiful 🦋moments and wonderful ✨memories
-
-You are myyy best best best friend 💙,best best best person in my life 😘🫶🏻 ,myy favvvvvvvv person 🤌🏻🥹
-
-Here's to celebrating you today and always!🎉
-
-With love and best wishes,
-Your Special Someone💝`;
-
-let letterOpened = false;
-
-function openLetter() {
-  if (letterOpened) return;
-  letterOpened = true;
-
-  const letter = document.getElementById("letter");
-  const envelope = document.getElementById("envelope");
-
-  envelope.style.display = "none";
-
-  document.getElementById("letterHint").textContent =
-    "Your special letter 💙";
-
-  letter.classList.add("show");
-  letter.textContent = "";
-
-  let i = 0;
-
-  function typeLetter() {
-    if (i < birthdayLetter.length) {
-      letter.textContent += birthdayLetter.charAt(i);
-      i++;
-      setTimeout(typeLetter, 22);
+    if (enteredPassword === "VH 2007") {
+        document.getElementById("passwordError").textContent = "";
+        showStep(2);
     } else {
-      document.getElementById("n7").classList.add("show");
+        document.getElementById("passwordError").textContent =
+            "Oops! That's not the correct password. Try again 💙";
     }
-  }
-
-  typeLetter();
 }
 
-/* Confetti for the final birthday screen */
-function launchConfetti() {
-  const symbols = ["💙", "✨", "🎉", "💖", "🎊"];
+document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+});
 
-  for (let i = 0; i < 45; i++) {
-    const piece = document.createElement("span");
 
-    piece.className = "confetti";
-    piece.textContent =
-      symbols[Math.floor(Math.random() * symbols.length)];
+/* SHOW SECTIONS */
 
-    piece.style.left = Math.random() * 100 + "vw";
-    piece.style.animationDelay = Math.random() * 2 + "s";
-    piece.style.fontSize = (16 + Math.random() * 18) + "px";
-
-    document.body.appendChild(piece);
-
-    setTimeout(() => piece.remove(), 6500);
-  }
-}
-</script>
-
-</body>
-</html>
+function showStep(stepNumber) {
+    for (let i = 1; i <= 8; i++) {
+        document.getElementBy
