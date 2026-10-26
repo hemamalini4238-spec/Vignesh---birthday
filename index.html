@@ -499,16 +499,20 @@ footer {
 <script>
 
 /* PASSWORD */
-
 function checkPassword() {
-    const enteredPassword = document.getElementById("password").value;
+    const passwordInput = document.getElementById("password");
+    const errorMessage = document.getElementById("passwordError");
 
-    if (enteredPassword === "VH 2007") {
-        document.getElementById("passwordError").textContent = "";
-        showStep(2);
+    if (!passwordInput) {
+        alert("Password box not found!");
+        return;
+    }
+
+    if (passwordInput.value.trim() === "VH 2007") {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
     } else {
-        document.getElementById("passwordError").textContent =
-            "Oops! That's not the correct password. Try again 💙";
+        errorMessage.textContent = "Incorrect password! Try VH 2007 💙";
     }
 }
 
