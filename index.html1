@@ -1,1 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Birthday Vignesh 💙</title>
+<meta name="description" content="A special birthday surprise made just for you.">
+<meta property="og:title" content="A Special Birthday Surprise 🖤❤️">
+<meta property="og:description" content="Someone special has a surprise waiting for you. 🎁">
+<meta property="og:type" content="website">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #310000, #090909 65%);
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(#ff222233 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    min-height: 100vh;
+    padding: 30px 17px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%;
+    padding: 28px 18px;
+    border: 1px solid #ff333377;
+    border-radius: 22px;
+    background: #120707ee;
+    box-shadow: 0 0 25px #ff000033;
+    animation: cardIn .7s ease both;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    color: #ff4545;
+    font-size: clamp(27px, 6vw, 42px);
+    margin-bottom: 18px;
+    text-shadow: 0 0 15px #ff000099;
+}
+
+h2 {
+    color: #ff7777;
+    margin: 15px 0;
+}
+
+p {
+    line-height: 1.8;
+    margin: 13px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #ff2424, #8e0000);
+    border: 1px solid #ff8888;
+    border-radius: 30px;
+    color: white;
+    padding: 13px 24px;
+    margin: 15px 5px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff000044;
+    transition: .25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff000099;
+}
+
+input {
+    width: 85%;
+    max-width: 300px;
+    padding: 14px;
+    margin: 18px 0;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #ff5555;
+    background: #090909;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+.small {
+    color: #d9a4a4;
+    font-size: 13px;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PASSWORD */
+
+.lock {
+    font-size: 75px;
+    animation: lockGlow 1.5s infinite alternate;
+}
+
+@keyframes lockGlow {
+    from { filter: drop-shadow(0 0 3px red); }
+    to { filter: drop-shadow(0 0 18px red); }
+}
+
+/* GIFT BOX */
+
+.gift {
+    font-size: 110px;
+    display: inline-block;
+    animation: giftBounce 1.2s infinite;
+}
+
+@keyframes giftBounce {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    30% { transform: translateY(-18px) rotate(-7deg); }
+    60% { transform: translateY(-8px) rotate(7deg); }
+}
+
+/* BALLOONS */
+
+.balloon-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17px;
+    margin: 30px 0;
+}
+
+.balloon {
+    width: 65px;
+    height: 82px;
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: inset -7px -7px 12px #0005, 0 0 15px #ff000055;
+    animation: balloonFloat 1.5s ease-in-out infinite alternate;
+}
+
+.balloon:nth-child(1) {
+    background: #f00;
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    background: #b30000;
+    animation-delay: .3s;
+}
+
+.balloon:nth-child(3) {
+    background: #ff7777;
+    animation-delay: .6s;
+}
+
+.balloon:nth-child(4) {
+    background: #800000;
+    animation-delay: .9s;
+}
+
+.balloon::after {
+    content: "";
+    width: 2px;
+    height: 30px;
+    background: #ffaaaa;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+}
+
+@keyframes balloonFloat {
+    from { transform: translateY(8px) rotate(-5deg); }
+    to { transform: translateY(-12px) rotate(5deg); }
+}
+
+.balloon.popped {
+    animation: balloonPop .3s forwards;
+    pointer-events: none;
+}
+
+@keyframes balloonPop {
+    to { transform: scale(1.8); opacity: 0; }
+}
+
+/* CAKE */
+
+.cake {
+    font-size: 100px;
+    display: inline-block;
+    animation: cakeDance 1.3s infinite;
+}
+
+@keyframes cakeDance {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-10px) rotate(-4deg); }
+    75% { transform: translateY(-10px) rotate(4deg); }
+}
+
+.flames {
+    color: orange;
+    font-size: 35px;
+    animation: flame 0.35s infinite alternate;
+}
+
+@keyframes flame {
+    from { transform: scale(.8); opacity: .7; }
+    to { transform: scale(1.15); opacity: 1; }
+}
+
+/* FLOWER BOUQUET */
+
+.flowers {
+    font-size: 80px;
+    display: inline-block;
+    animation: bouquetReveal 2s ease-in-out infinite;
+}
+
+@keyframes bouquetReveal {
+    0%, 100% { transform: scale(.9) rotate(-5deg); }
+    50% { transform: scale(1.12) rotate(5deg); }
+}
+
+.petal {
+    position: fixed;
+    top: -40px;
+    z-index: 5;
+    pointer-events: none;
+    animation: petalFall 5s linear forwards;
+}
+
+@keyframes petalFall {
+    to {
+        transform: translateY(110vh) rotate(500deg);
+        opacity: .2;
+    }
+}
+
+/* LETTER */
+
+.letter {
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.9;
+    font-size: 15px;
+    color: #ffe6e6;
+    min-height: 120px;
+}
+
+.signature {
+    color: #ff7777;
+}
+
+/* EXTRA SURPRISE */
+
+.heart-box {
+    font-size: 90px;
+    display: inline-block;
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+}
+
+/* FINAL SCREEN */
+
+.final-title {
+    animation: finalGlow 1.4s infinite alternate;
+    color: #8ed8ff;
+}
+
+@keyframes finalGlow {
+    from { text-shadow: 0 0 8px #168bff; }
+    to {
+        text-shadow: 0 0 20px #168bff, 0 0 35px #ff0000;
+    }
+}
+
+.final-cake {
+    font-size: 95px;
+    animation: giftBounce 1.2s infinite;
+}
+
+.spark {
+    position: fixed;
+    top: -30px;
+    z-index: 10;
+    pointer-events: none;
+    animation: sparkFall 4s linear forwards;
+}
+
+@keyframes sparkFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    color: #b87878;
+    margin-top: 22px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- STEP 1: PASSWORD -->
+
+<section id="step1" class="card">
+    <h1>🖤 A Secret Surprise ❤️</h1>
+    <div class="lock">🔐</div>
+
+    <p>Someone special has prepared something for you.</p>
+    <p>Enter the secret password to unlock your surprise.</p>
+
+    <input id="password"
+           type="password"
+           placeholder="Enter password"
+           autocomplete="off">
+
+    <br>
+
+    <button type="button" onclick="checkPassword()">
+        Unlock My Surprise ❤️
+    </button>
+
+    <p id="passwordError" style="color:#ff7777"></p>
+</section>
+
+
+<!-- STEP 2: GIFT BOX -->
+
+<section id="step2" class="card hidden">
+    <h1>Your First Surprise 🎁</h1>
+
+    <p>A little gift is waiting for you!</p>
+
+    <div class="gift">🎁</div>
+
+    <p>Every gift has a little magic inside. ❤️</p>
+
+    <button type="button" onclick="showStep(3)">
+        Next Surprise ➜
+    </button>
+</section>
+
+
+<!-- STEP 3: BALLOONS -->
+
+<section id="step3" class="card hidden">
+    <h1>Four Little Wishes 🎈</h1>
+
+    <p>Tap every balloon to discover your birthday wishes.</p>
+
+    <div class="balloon-area">
+        <div class="balloon" onclick="popBalloon(this,0)">❤️</div>
+        <div class="balloon" onclick="popBalloon(this,1)">✨</div>
+        <div class="balloon" onclick="popBalloon(this,2)">🎉</div>
+        <div class="balloon" onclick="popBalloon(this,3)">🖤</div>
+    </div>
+
+    <p id="balloonMessage">Pop a balloon! 💌</p>
+
+    <button type="button" onclick="showStep(4)">
+        Next Surprise ➜
+    </button>
+</section>
+
+
+<!-- STEP 4: CAKE -->
+
+<section id="step4" class="card hidden">
+    <h1>Make a Birthday Wish! 🎂</h1>
+
+    <div id="flames" class="flames">🕯️ 🕯️ 🕯️</div>
+
+    <div class="cake">🎂</div>
+
+    <p id="cakeMessage">
+        Close your eyes, make a wish and blow the candles! ❤️
+    </p>
+
+    <button type="button" onclick="blowCandles()">
+        Blow the Candles 💨
+    </button>
+
+    <br>
+
+    <button type="button" onclick="showStep(5)">
+        Next Surprise ➜
+    </button>
+</section>
+
+
+<!-- STEP 5: PROPOSAL FLOWERS -->
+
+<section id="step5" class="card hidden">
+    <h1>A Special Flower Surprise 🌹</h1>
+
+    <div class="flowers">💐</div>
+
+    <h2>A Bouquet Just for You ❤️</h2>
+
+    <p>
+        Like these flowers, may your life always bloom
+        with happiness, success and beautiful memories.
+    </p>
+
+    <p>
+        A little bouquet to make your special day
+        even more beautiful. 🌹🖤
+    </p>
+
+    <button type="button" onclick="showStep(6)">
+        Next Surprise ➜
+    </button>
+</section>
+
+
+<!-- STEP 6: PERSONAL LETTER -->
+
+<section id="step6" class="card hidden">
+    <h1>A Letter from My Heart 💌</h1>
+
+    <p>Some feelings are best expressed in words. ❤️</p>
+
+    <div id="letter" class="letter"></div>
+
+    <button id="letterNext"
+            class="hidden"
+            type="button"
+            onclick="showStep(7)">
+        Next Surprise ➜
+    </button>
+</section>
+
+
+<!-- STEP 7: EXTRA SURPRISE -->
+
+<section id="step7" class="card hidden">
+    <h1>One Last Little Surprise 🖤</h1>
+
+    <div class="heart-box">❤️</div>
+
+    <h2>A Little Reminder</h2>
+
+    <p>
+        No matter how many birthdays come and go,
+        some people will always hold a special place
+        in our hearts.
+    </p>
+
+    <p>
+        Today is all about you, Vicky.
+        Keep smiling and keep being yourself! ✨
+    </p>
+
+    <button type="button" onclick="showStep(8)">
+        Open Final Surprise 🎉
+    </button>
+</section>
+
+
+<!-- STEP 8: FINAL SCREEN -->
+
+<section id="step8" class="card hidden">
+    <h1 class="final-title">Happy Birthday Vignesh 💙</h1>
+
+    <div class="final-cake">🎂</div>
+
+    <h2>Happy Birthday, Vicky! 🎉</h2>
+
+    <p>
+        May your days be filled with happiness,
+        your dreams become reality, and your year
+        bring countless beautiful memories. ❤️
+    </p>
+
+    <p>
+        Stay happy. Stay blessed.
+        Have the most amazing birthday! 🖤❤️
+    </p>
+
+    <div style="font-size:40px; margin:20px;">
+        🎁 🌹 🎂 ✨ 💙
+    </div>
+
+    <p>Made especially for you. ❤️</p>
+
+    <button type="button" onclick="celebrateAgain()">
+        Celebrate Again 🎉
+    </button>
+</section>
+
+<footer>Made with love 🖤❤️</footer>
+
+</div>
+
+
+<script>
+
+/* PASSWORD: 2007 */
+
+function checkPassword() {
+    const input = document.getElementById("password").value.trim();
+
+    if (input === "2007") {
+        document.getElementById("passwordError").textContent = "";
+        showStep(2);
+    } else {
+        document.getElementById("passwordError").textContent =
+            "Incorrect password. Try again ❤️";
+    }
+}
+
+document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+});
+
+
+/* SHOW THE NEXT SURPRISE */
+
+function showStep(number) {
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById("step" + i).classList.add("hidden");
+    }
+
+    document.getElementById("step" + number).classList.remove("hidden");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (number === 5) {
+        startFlowers();
+    }
+
+    if (number === 6 && !letterStarted) {
+        startLetter();
+    }
+
+    if (number === 8) {
+        celebrateAgain();
+    }
+}
+
+
+/* BALLOONS */
+
+const wishes = [
+    "❤️ Happiness: May you always have reasons to smile!",
+    "✨ Success: May your dreams and goals come true!",
+    "🎉 Joy: May your life be full of wonderful memories!",
+    "🖤 Friendship: May you always be surrounded by good people!"
+];
+
+let poppedCount = 0;
+
+function popBalloon(balloon, index) {
+    if (balloon.classList.contains("popped")) return;
+
+    balloon.classList.add("popped");
+    poppedCount++;
+
+    document.getElementById("balloonMessage").textContent = wishes[index];
+
+    if (poppedCount === 4) {
+        document.getElementById("balloonMessage").textContent =
+            "All four wishes are yours! ❤️✨";
+    }
+}
+
+
+/* BLOW THE CANDLES */
+
+let candlesBlown = false;
+
+function blowCandles() {
+    if (candlesBlown) return;
+
+    candlesBlown = true;
+
+    document.getElementById("flames").textContent = "💨";
+    document.getElementById("cakeMessage").textContent =
+        "Candles blown! May your birthday wish come true! 🎉❤️";
+
+    confetti();
+}
+
+
+/* FLOWER PETALS */
+
+function startFlowers() {
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createPetal, i * 180);
+    }
+}
+
+function createPetal() {
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+    petal.textContent = ["🌹", "🌸", "❤️"][Math.floor(Math.random() * 3)];
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (18 + Math.random() * 20) + "px";
+    petal.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => petal.remove(), 6500);
+}
+
+
+/* PERSONAL LETTER: ORIGINAL MESSAGE */
+
+const message = `Dear Vignesh ,
+
+Wish u many many more happy returns of the day Vicky💙🎂 happy ya iru eathukum fell panatha enoda  special person 😻
+I'm so grateful to have you in my life❤️‍🩹!!
+
+You bring so much warmth and sweetness into my life💌 Every moment with you is precious❣️
+
+Nobody can replace you in my heart ❤️ 🫂
+
+On your special day, 😌I wish you all the happiness, love, and joy that you deserve🫠May this year bring you countless beautiful 🦋moments and wonderful ✨memories
+
+You are myyy best best best friend 💙,best best best person in my life 😘🫶🏻 ,myy favvvvvvvv person 🤌🏻🥹
+
+Here's to celebrating you today and always!🎉
+
+With love and best wishes,
+Your Special Someone💝`;
+
+let letterStarted = false;
+
+function startLetter() {
+    letterStarted = true;
+
+    const letterElement = document.getElementById("letter");
+    const nextButton = document.getElementById("letterNext");
+
+    letterElement.textContent = "";
+    nextButton.classList.add("hidden");
+
+    let index = 0;
+
+    function typeNextCharacter() {
+        if (index < message.length) {
+            letterElement.textContent += message.charAt(index);
+            index++;
+
+            setTimeout(typeNextCharacter, 28);
+        } else {
+            nextButton.classList.remove("hidden");
+        }
+    }
+
+    typeNextCharacter();
+}
+
+
+/* CONFETTI */
+
+function confetti() {
+    const symbols = ["❤️", "✨", "🎉", "🎊", "💙"];
+
+    for (let i = 0; i < 35; i++) {
+        const item = document.createElement("div");
+
+        item.className = "spark";
+        item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.fontSize = (15 + Math.random() * 20) + "px";
+        item.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => item.remove(), 5500);
+    }
+}
+
+
+/* FINAL CELEBRATION */
+
+function celebrateAgain() {
+    confetti();
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(createPetal, i * 200);
+    }
+}
+
+</script>
+
+</body>
+</html>
